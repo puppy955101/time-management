@@ -25,7 +25,10 @@ public class add_something extends ActionBarActivity {
         add.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View arg0) {
                 SharedPreferences SP = getSharedPreferences("data", MODE_PRIVATE);
-                SP.edit().putString("add", et.getText().toString()).apply();
+                int now = SP.getInt("now",0);
+                SP.edit().putString(Integer.toString(now), et.getText().toString()).apply();
+                now += 1;
+                SP.edit().putInt("now",now).apply();
                 Intent intent = new Intent();
                 intent.setClass(add_something.this, MainActivity.class);
                 startActivity(intent);
