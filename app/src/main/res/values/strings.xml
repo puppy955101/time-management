@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Time management</string>
+    <string name="string">add</string>
+    <string name="strings">add</string>
 </resources>
